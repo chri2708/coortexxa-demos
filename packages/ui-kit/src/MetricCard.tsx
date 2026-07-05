@@ -15,12 +15,12 @@ export function MetricCard({ label, value, delta, deltaTone = 'up', className }:
   return (
     <div
       className={cn(
-        'rounded-[var(--radius-lg)] border border-border bg-surface p-5 shadow-[var(--shadow-md)] transition-shadow hover:shadow-[var(--shadow-lg)]',
+        'min-w-0 rounded-[var(--radius-lg)] border border-border bg-surface p-5 shadow-[var(--shadow-md)] transition-shadow hover:shadow-[var(--shadow-lg)]',
         className,
       )}
     >
-      <p className="text-sm font-medium text-ink-500">{label}</p>
-      <p className="mt-2 text-3xl font-semibold tracking-tight text-ink-900">{value}</p>
+      <p className="truncate text-sm font-medium text-ink-500">{label}</p>
+      <p className="mt-2 break-words text-2xl font-semibold tracking-tight text-ink-900 sm:text-3xl">{value}</p>
       {delta && (
         <p
           className={cn(
