@@ -21,7 +21,7 @@ const verticals: Vertical[] = [
     name: 'COORTEXXA Bank',
     description: 'Venta y revisión de productos bancarios en canal presencial y terreno.',
     modules: ['Formularios', 'Firma digital', 'Workflow de aprobación', 'KPI ejecutivo'],
-    status: 'Next demo',
+    status: 'Demo ready',
   },
   {
     icon: Briefcase,

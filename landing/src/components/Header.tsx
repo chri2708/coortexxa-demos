@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Logo } from '@coortexxa/theme'
 import { Button } from '@coortexxa/ui-kit'
+import { demoLinks } from '@/config/demoLinks'
 
 const navItems = [
   { label: 'Plataforma', href: '#plataforma' },
@@ -32,7 +33,12 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a href="#command-center" className="hidden sm:block">
+          <a
+            href={demoLinks.commandCenter}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:block"
+          >
             <Button variant="secondary" size="sm">
               Ver Command Center
             </Button>

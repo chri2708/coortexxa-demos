@@ -8,5 +8,12 @@
     "demo-bank",
     "demo-sales",
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "dev:landing": "npm run dev --workspace=landing",
+    "dev:command-center": "npm run dev --workspace=command-center",
+    "dev:bank": "npm run dev --workspace=demo-bank",
+    "dev:all": "npm run dev:landing & npm run dev:command-center & npm run dev:bank & wait",
+    "build:all": "npm run build --workspace=command-center && npm run build --workspace=landing && npm run build --workspace=demo-bank"
+  }
 }

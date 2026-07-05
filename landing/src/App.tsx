@@ -4,6 +4,7 @@ import { ProblemSection } from './components/ProblemSection'
 import { PlatformSection } from './components/PlatformSection'
 import { VerticalsSection } from './components/VerticalsSection'
 import { CommandCenterPreview } from './components/CommandCenterPreview'
+import { DemosDisponiblesSection } from './components/DemosDisponiblesSection'
 import { DemosSection } from './components/DemosSection'
 import { SecuritySection } from './components/SecuritySection'
 import { FinalCta } from './components/FinalCta'
@@ -19,6 +20,7 @@ function App() {
         <PlatformSection />
         <VerticalsSection />
         <CommandCenterPreview />
+        <DemosDisponiblesSection />
         <DemosSection />
         <SecuritySection />
         <FinalCta />
