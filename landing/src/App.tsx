@@ -7,6 +7,7 @@ import { CommandCenterPreview } from './components/CommandCenterPreview'
 import { DemosDisponiblesSection } from './components/DemosDisponiblesSection'
 import { DemosSection } from './components/DemosSection'
 import { SecuritySection } from './components/SecuritySection'
+import { BrandPreviewSection } from './components/BrandPreviewSection'
 import { FinalCta } from './components/FinalCta'
 import { Footer } from './components/Footer'
 
@@ -23,6 +24,7 @@ function App() {
         <DemosDisponiblesSection />
         <DemosSection />
         <SecuritySection />
+        <BrandPreviewSection />
         <FinalCta />
       </main>
       <Footer />

@@ -70,6 +70,12 @@ npm run build:all          # compila command-center, landing, demo-bank, demo-sa
 Bank, Sales y Health juntos cubren tres grandes casos de venta: regulado/documental,
 operativo/terreno y afiliación/salud, todos sobre la misma base de plataforma.
 
+## COORTEXXA Brand System
+
+Logo, isotipo, favicon y guía de uso completos en [`docs/brand-guide.md`](docs/brand-guide.md).
+Preview visual en vivo: sección "Sistema de marca COORTEXXA" al final de la landing
+(`localhost:5174`). Componente reutilizable: `<Logo />` desde `@coortexxa/ui-kit`.
+
 ## Reglas del proyecto
 
 - No se toca el repo productivo (`crm-axis-banco-web`, cliente BCI real).

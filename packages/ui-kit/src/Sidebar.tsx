@@ -1,6 +1,6 @@
 import { Fragment, type ComponentType, type ReactNode } from 'react'
 import { X } from 'lucide-react'
-import { Logo } from '@coortexxa/theme'
+import { Logo } from './Logo'
 import { cn } from './lib/cn'
 
 export interface SidebarItem {
@@ -42,7 +42,7 @@ export function Sidebar({ items, onNavigate, onClose, renderLink = defaultRender
   return (
     <aside className="flex h-full w-64 shrink-0 flex-col bg-surface-sidebar px-4 py-6">
       <div className="mb-8 flex items-center justify-between px-2">
-        <Logo variant="dark" size={26} />
+        <Logo variant="horizontal" tone="light" size="md" />
         {onClose && (
           <button
             type="button"

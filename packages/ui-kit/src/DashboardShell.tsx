@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { Menu } from 'lucide-react'
-import { Logo } from '@coortexxa/theme'
+import { Logo } from './Logo'
 import { Sidebar, type SidebarItem, type SidebarLinkProps } from './Sidebar'
 import { Topbar } from './Topbar'
 import { cn } from './lib/cn'
@@ -89,7 +89,7 @@ export function DashboardShell({
           >
             <Menu className="h-5 w-5" />
           </button>
-          <Logo variant="light" size={22} />
+          <Logo variant="horizontal" tone="default" size="sm" />
           <div className="h-9 w-9" />
         </div>
 

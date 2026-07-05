@@ -1,5 +1,3 @@
-export * from './Logo'
-
 export const brand = {
   50: '#f2f1fd',
   100: '#e4e2fb',
