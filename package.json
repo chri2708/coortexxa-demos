@@ -1,0 +1,12 @@
+{
+  "name": "coortexxa-demos",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "command-center",
+    "landing",
+    "demo-bank",
+    "demo-sales",
+    "packages/*"
+  ]
+}

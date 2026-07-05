@@ -1,0 +1,37 @@
+@theme {
+  /* Brand */
+  --color-brand-50: #f2f1fd;
+  --color-brand-100: #e4e2fb;
+  --color-brand-300: #a9a1f2;
+  --color-brand-500: #5b4fe0;
+  --color-brand-600: #4a3dd1;
+  --color-brand-700: #3c2fb3;
+  --color-brand-900: #241c6b;
+
+  /* Neutrals (superficie enterprise clara) */
+  --color-ink-900: #10121a;
+  --color-ink-700: #33374a;
+  --color-ink-500: #656b82;
+  --color-ink-300: #9aa0b4;
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f6f7fb;
+  --color-surface-sidebar: #14152b;
+  --color-border: #e3e5ef;
+
+  /* Estados */
+  --color-success-500: #17a06a;
+  --color-success-100: #e2f6ec;
+  --color-warning-500: #c98a12;
+  --color-warning-100: #fbf0dd;
+  --color-danger-500: #d64545;
+  --color-danger-100: #fbe6e6;
+  --color-info-500: #2f6fed;
+  --color-info-100: #e7eefd;
+
+  /* Tipografía */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Radios y sombras */
+  --radius-card: 14px;
+  --shadow-card: 0 1px 2px rgba(16, 18, 26, 0.04), 0 8px 24px rgba(16, 18, 26, 0.06);
+}
