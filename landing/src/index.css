@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+@source '../../packages/ui-kit/src';
+@import '@coortexxa/theme/tokens.css';
+@import '@coortexxa/theme/fonts.css';
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-surface);
+  color: var(--color-ink-700);
+}
