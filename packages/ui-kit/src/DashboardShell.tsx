@@ -1,7 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { Menu } from 'lucide-react'
 import { Logo } from '@coortexxa/theme'
-import { Sidebar, type SidebarItem } from './Sidebar'
+import { Sidebar, type SidebarItem, type SidebarLinkProps } from './Sidebar'
 import { Topbar } from './Topbar'
 import { cn } from './lib/cn'
 
@@ -11,6 +11,8 @@ interface DashboardShellProps {
   topbarDescription?: string
   userName: string
   children: ReactNode
+  topbarActions?: ReactNode
+  renderLink?: (props: SidebarLinkProps) => ReactNode
 }
 
 export function DashboardShell({
@@ -19,6 +21,8 @@ export function DashboardShell({
   topbarDescription,
   userName,
   children,
+  topbarActions,
+  renderLink,
 }: DashboardShellProps) {
   const [drawerOpen, setDrawerOpen] = useState(false)
 
@@ -41,7 +45,7 @@ export function DashboardShell({
     <div className="flex min-h-screen bg-surface-subtle">
       {/* Sidebar fija — desktop/tablet grande */}
       <div className="hidden lg:block">
-        <Sidebar items={navItems} />
+        <Sidebar items={navItems} renderLink={renderLink} />
       </div>
 
       {/* Drawer — mobile/tablet chico */}
@@ -65,7 +69,12 @@ export function DashboardShell({
             drawerOpen ? 'translate-x-0' : '-translate-x-full',
           )}
         >
-          <Sidebar items={navItems} onNavigate={() => setDrawerOpen(false)} onClose={() => setDrawerOpen(false)} />
+          <Sidebar
+            items={navItems}
+            onNavigate={() => setDrawerOpen(false)}
+            onClose={() => setDrawerOpen(false)}
+            renderLink={renderLink}
+          />
         </div>
       </div>
 
@@ -85,7 +94,12 @@ export function DashboardShell({
         </div>
 
         <main className="min-w-0 flex-1 px-4 py-6 sm:px-6 lg:px-10 lg:py-8">
-          <Topbar title={topbarTitle} description={topbarDescription} userName={userName} />
+          <Topbar
+            title={topbarTitle}
+            description={topbarDescription}
+            userName={userName}
+            actions={topbarActions}
+          />
           {children}
         </main>
       </div>
