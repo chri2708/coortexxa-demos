@@ -1,4 +1,4 @@
-import { ArrowUpRight, Briefcase, Landmark, LayoutDashboard } from 'lucide-react'
+import { ArrowUpRight, Briefcase, HeartPulse, Landmark, LayoutDashboard } from 'lucide-react'
 import { Button, Card, CardContent, CardHeader, CardTitle, StatusBadge } from '@coortexxa/ui-kit'
 import { demoLinks } from '@/config/demoLinks'
 
@@ -21,6 +21,12 @@ const demosListos = [
     description: 'Agenda de visitas, check-in, pedidos, ranking y territorio para fuerza de venta.',
     href: demoLinks.sales,
   },
+  {
+    icon: HeartPulse,
+    name: 'COORTEXXA Health',
+    description: 'Afiliaciones, gestión documental, revisión y activación para salud e ISAPRE.',
+    href: demoLinks.health,
+  },
 ]
 
 export function DemosDisponiblesSection() {
@@ -36,7 +42,7 @@ export function DemosDisponiblesSection() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {demosListos.map(({ icon: Icon, name, description, href }) => (
             <Card key={name}>
               <CardHeader>
@@ -63,7 +69,7 @@ export function DemosDisponiblesSection() {
         <Card className="mt-5">
           <CardContent className="flex flex-col items-center gap-3 pt-6 text-center sm:flex-row sm:justify-between sm:text-left">
             <div>
-              <p className="text-sm font-semibold text-ink-900">Insurance · Isapre · AFP · Health</p>
+              <p className="text-sm font-semibold text-ink-900">Insurance · Isapre · AFP</p>
               <p className="text-sm text-ink-500">En roadmap — mismo núcleo de plataforma, aún sin demo navegable.</p>
             </div>
             <StatusBadge tone="neutral">Roadmap</StatusBadge>

@@ -22,7 +22,7 @@ export function Topbar({ title, description, userName, actions }: TopbarProps) {
         <h1 className="truncate text-2xl font-semibold tracking-tight text-ink-900">{title}</h1>
         {description && <p className="mt-1 truncate text-sm text-ink-500">{description}</p>}
       </div>
-      <div className="flex shrink-0 items-center gap-4">
+      <div className="flex min-w-0 items-center gap-4">
         {actions}
         <button
           type="button"

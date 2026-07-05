@@ -13,6 +13,7 @@ landing/           Landing comercial (puerto 5174)
 command-center/     Dashboard ejecutivo genérico (puerto 5173)
 demo-bank/          Demo navegable COORTEXXA Bank (puerto 5175)
 demo-sales/         Demo navegable COORTEXXA Sales (puerto 5176)
+demo-health/        Demo navegable COORTEXXA Health (puerto 5177)
 packages/theme/     Identidad visual: colores, tipografía, logo
 packages/ui-kit/    Componentes compartidos (Button, Card, Table, DashboardShell, DemoVerticalShell, etc.)
 packages/mock-data/ Datos ficticios compartidos (empresas, ejecutivos, KPIs)
@@ -30,8 +31,9 @@ npm run dev:landing        # http://localhost:5174
 npm run dev:command-center # http://localhost:5173
 npm run dev:bank           # http://localhost:5175
 npm run dev:sales          # http://localhost:5176
+npm run dev:health         # http://localhost:5177
 
-npm run dev:all            # levanta los cuatro a la vez (sin dependencias nuevas, ver nota abajo)
+npm run dev:all            # levanta los cinco a la vez (sin dependencias nuevas, ver nota abajo)
 ```
 
 `dev:all` usa backgrounding nativo de shell (`&` + `wait`), sin ninguna dependencia adicional.
@@ -42,7 +44,7 @@ proyecto para la evaluación completa (por qué, riesgo, alternativa, cómo desi
 ## Build de producción
 
 ```bash
-npm run build:all          # compila command-center, landing, demo-bank y demo-sales en orden
+npm run build:all          # compila command-center, landing, demo-bank, demo-sales y demo-health en orden
 ```
 
 ## Orden recomendado para presentar a un gerente
@@ -50,7 +52,8 @@ npm run build:all          # compila command-center, landing, demo-bank y demo-s
 1. **Landing** (`localhost:5174`) — contexto comercial: problema, plataforma, verticales, y la
    sección "Demos disponibles ahora" con acceso directo a los demos reales.
 2. **Command Center** (`localhost:5173`, se abre desde la landing) — el "wow" ejecutivo: KPIs,
-   pipeline, ranking, todo en una sola pantalla.
+   pipeline, ranking, todo en una sola pantalla. También enlaza a Bank/Sales/Health desde su
+   sección "Otros demos".
 3. **Demo Bank** (`localhost:5175`, se abre desde la landing) — el flujo operativo regulado:
    pipeline → nueva solicitud → detalle (documentos, firma simulada, workflow Ejecutivo →
    Supervisor → BackOffice) → simulador de ahorro POS. Usar el selector de rol para mostrar las
@@ -59,9 +62,13 @@ npm run build:all          # compila command-center, landing, demo-bank y demo-s
    terreno: agenda de visitas → check-in simulado → formulario de visita → fotos simuladas →
    pedido → ranking y bonos → cobertura territorial. Usar el selector de rol para mostrar
    Vendedor/Supervisor/Gerente.
+5. **Demo Health** (`localhost:5177`, se abre desde la landing) — afiliaciones y convenios de
+   salud: bandeja de solicitudes → nueva solicitud → detalle (timeline, documentos, revisión) →
+   operaciones (validación de documentos y activación). Usar el selector de rol para mostrar
+   Ejecutivo/Supervisor/Operaciones/Gerente.
 
-Bank + Sales juntos cubren los dos grandes casos de venta: uno regulado/documental y otro
-operativo/terreno, sobre la misma base de plataforma.
+Bank, Sales y Health juntos cubren tres grandes casos de venta: regulado/documental,
+operativo/terreno y afiliación/salud, todos sobre la misma base de plataforma.
 
 ## Reglas del proyecto
 

@@ -54,9 +54,9 @@ const verticals: Vertical[] = [
   {
     icon: HeartPulse,
     name: 'COORTEXXA Health',
-    description: 'Gestión comercial y documental para prestadores de salud.',
-    modules: ['Consentimientos', 'Firma digital', 'Gestión documental', 'KPI'],
-    status: 'Roadmap',
+    description: 'Afiliaciones, seguros complementarios y convenios médicos para fuerzas comerciales de salud.',
+    modules: ['Formularios de afiliación', 'Gestión documental', 'Revisión y aprobación', 'Ranking ejecutivo'],
+    status: 'Demo ready',
   },
 ]
 

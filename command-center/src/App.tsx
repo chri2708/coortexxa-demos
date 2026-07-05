@@ -1,5 +1,6 @@
-import { BarChart3, Building2, LayoutDashboard, Receipt, Settings, Users } from 'lucide-react'
+import { ArrowUpRight, BarChart3, Briefcase, Building2, HeartPulse, Landmark, LayoutDashboard, Receipt, Settings, Users } from 'lucide-react'
 import {
+  Button,
   Card,
   CardContent,
   CardHeader,
@@ -16,6 +17,13 @@ import {
   type SidebarItem,
 } from '@coortexxa/ui-kit'
 import { ejecutivos, empresas, kpiActual, kpisMensuales, ventas } from '@coortexxa/mock-data'
+import { demoLinks } from '@/config/demoLinks'
+
+const otrosDemos = [
+  { icon: Landmark, name: 'COORTEXXA Bank', href: demoLinks.bank },
+  { icon: Briefcase, name: 'COORTEXXA Sales', href: demoLinks.sales },
+  { icon: HeartPulse, name: 'COORTEXXA Health', href: demoLinks.health },
+]
 
 const navItems: SidebarItem[] = [
   { label: 'Command Center', icon: LayoutDashboard, active: true },
@@ -150,6 +158,32 @@ function App() {
               ))}
             </TableBody>
           </Table>
+        </CardContent>
+      </Card>
+
+      <Card className="mt-6">
+        <CardHeader>
+          <CardTitle>Otros demos</CardTitle>
+          <span className="text-xs text-ink-500">Verticales COORTEXXA disponibles</span>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {otrosDemos.map(({ icon: Icon, name, href }) => (
+              <div key={name} className="flex items-center justify-between rounded-[var(--radius-md)] border border-border p-4">
+                <div className="flex items-center gap-2.5">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-[var(--radius-sm)] bg-brand-100 text-brand-600">
+                    <Icon className="h-4 w-4" />
+                  </div>
+                  <span className="text-sm font-medium text-ink-900">{name}</span>
+                </div>
+                <a href={href} target="_blank" rel="noopener noreferrer">
+                  <Button variant="ghost" size="sm" className="gap-1">
+                    Ver <ArrowUpRight className="h-3.5 w-3.5" />
+                  </Button>
+                </a>
+              </div>
+            ))}
+          </div>
         </CardContent>
       </Card>
     </DashboardShell>

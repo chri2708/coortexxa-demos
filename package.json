@@ -7,6 +7,7 @@
     "landing",
     "demo-bank",
     "demo-sales",
+    "demo-health",
     "packages/*"
   ],
   "scripts": {
@@ -14,7 +15,8 @@
     "dev:command-center": "npm run dev --workspace=command-center",
     "dev:bank": "npm run dev --workspace=demo-bank",
     "dev:sales": "npm run dev --workspace=demo-sales",
-    "dev:all": "npm run dev:landing & npm run dev:command-center & npm run dev:bank & npm run dev:sales & wait",
-    "build:all": "npm run build --workspace=command-center && npm run build --workspace=landing && npm run build --workspace=demo-bank && npm run build --workspace=demo-sales"
+    "dev:health": "npm run dev --workspace=demo-health",
+    "dev:all": "npm run dev:landing & npm run dev:command-center & npm run dev:bank & npm run dev:sales & npm run dev:health & wait",
+    "build:all": "npm run build --workspace=command-center && npm run build --workspace=landing && npm run build --workspace=demo-bank && npm run build --workspace=demo-sales && npm run build --workspace=demo-health"
   }
 }
