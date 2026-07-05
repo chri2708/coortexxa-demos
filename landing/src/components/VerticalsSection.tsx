@@ -28,7 +28,7 @@ const verticals: Vertical[] = [
     name: 'COORTEXXA Sales',
     description: 'Fuerza de venta en terreno para redes comerciales y distribución.',
     modules: ['Ruta comercial', 'Formularios', 'Ranking de ejecutivos', 'Reportes'],
-    status: 'Next demo',
+    status: 'Demo ready',
   },
   {
     icon: Umbrella,

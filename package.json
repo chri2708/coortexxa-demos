@@ -13,7 +13,8 @@
     "dev:landing": "npm run dev --workspace=landing",
     "dev:command-center": "npm run dev --workspace=command-center",
     "dev:bank": "npm run dev --workspace=demo-bank",
-    "dev:all": "npm run dev:landing & npm run dev:command-center & npm run dev:bank & wait",
-    "build:all": "npm run build --workspace=command-center && npm run build --workspace=landing && npm run build --workspace=demo-bank"
+    "dev:sales": "npm run dev --workspace=demo-sales",
+    "dev:all": "npm run dev:landing & npm run dev:command-center & npm run dev:bank & npm run dev:sales & wait",
+    "build:all": "npm run build --workspace=command-center && npm run build --workspace=landing && npm run build --workspace=demo-bank && npm run build --workspace=demo-sales"
   }
 }

@@ -12,9 +12,9 @@ reales**. Todo el contenido (empresas, ejecutivos, ventas, solicitudes) es ficti
 landing/           Landing comercial (puerto 5174)
 command-center/     Dashboard ejecutivo genérico (puerto 5173)
 demo-bank/          Demo navegable COORTEXXA Bank (puerto 5175)
-demo-sales/         (pendiente — Fase 4)
+demo-sales/         Demo navegable COORTEXXA Sales (puerto 5176)
 packages/theme/     Identidad visual: colores, tipografía, logo
-packages/ui-kit/    Componentes compartidos (Button, Card, Table, DashboardShell, etc.)
+packages/ui-kit/    Componentes compartidos (Button, Card, Table, DashboardShell, DemoVerticalShell, etc.)
 packages/mock-data/ Datos ficticios compartidos (empresas, ejecutivos, KPIs)
 ```
 
@@ -29,8 +29,9 @@ npm install                # una sola vez, instala todo el workspace
 npm run dev:landing        # http://localhost:5174
 npm run dev:command-center # http://localhost:5173
 npm run dev:bank           # http://localhost:5175
+npm run dev:sales          # http://localhost:5176
 
-npm run dev:all            # levanta los tres a la vez (sin dependencias nuevas, ver nota abajo)
+npm run dev:all            # levanta los cuatro a la vez (sin dependencias nuevas, ver nota abajo)
 ```
 
 `dev:all` usa backgrounding nativo de shell (`&` + `wait`), sin ninguna dependencia adicional.
@@ -41,7 +42,7 @@ proyecto para la evaluación completa (por qué, riesgo, alternativa, cómo desi
 ## Build de producción
 
 ```bash
-npm run build:all          # compila command-center, landing y demo-bank en orden
+npm run build:all          # compila command-center, landing, demo-bank y demo-sales en orden
 ```
 
 ## Orden recomendado para presentar a un gerente
@@ -50,10 +51,17 @@ npm run build:all          # compila command-center, landing y demo-bank en orde
    sección "Demos disponibles ahora" con acceso directo a los demos reales.
 2. **Command Center** (`localhost:5173`, se abre desde la landing) — el "wow" ejecutivo: KPIs,
    pipeline, ranking, todo en una sola pantalla.
-3. **Demo Bank** (`localhost:5175`, se abre desde la landing) — el flujo operativo completo:
+3. **Demo Bank** (`localhost:5175`, se abre desde la landing) — el flujo operativo regulado:
    pipeline → nueva solicitud → detalle (documentos, firma simulada, workflow Ejecutivo →
    Supervisor → BackOffice) → simulador de ahorro POS. Usar el selector de rol para mostrar las
    distintas vistas (Ejecutivo/Supervisor/Gerente).
+4. **Demo Sales** (`localhost:5176`, se abre desde la landing) — el caso de fuerza de venta en
+   terreno: agenda de visitas → check-in simulado → formulario de visita → fotos simuladas →
+   pedido → ranking y bonos → cobertura territorial. Usar el selector de rol para mostrar
+   Vendedor/Supervisor/Gerente.
+
+Bank + Sales juntos cubren los dos grandes casos de venta: uno regulado/documental y otro
+operativo/terreno, sobre la misma base de plataforma.
 
 ## Reglas del proyecto
 

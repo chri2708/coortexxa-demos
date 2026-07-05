@@ -1,4 +1,4 @@
-import { ArrowUpRight, Landmark, LayoutDashboard } from 'lucide-react'
+import { ArrowUpRight, Briefcase, Landmark, LayoutDashboard } from 'lucide-react'
 import { Button, Card, CardContent, CardHeader, CardTitle, StatusBadge } from '@coortexxa/ui-kit'
 import { demoLinks } from '@/config/demoLinks'
 
@@ -15,6 +15,12 @@ const demosListos = [
     description: 'Flujo completo: pipeline, solicitud, firma simulada y workflow.',
     href: demoLinks.bank,
   },
+  {
+    icon: Briefcase,
+    name: 'COORTEXXA Sales',
+    description: 'Agenda de visitas, check-in, pedidos, ranking y territorio para fuerza de venta.',
+    href: demoLinks.sales,
+  },
 ]
 
 export function DemosDisponiblesSection() {
@@ -30,7 +36,7 @@ export function DemosDisponiblesSection() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {demosListos.map(({ icon: Icon, name, description, href }) => (
             <Card key={name}>
               <CardHeader>
@@ -53,16 +59,6 @@ export function DemosDisponiblesSection() {
             </Card>
           ))}
         </div>
-
-        <Card className="mt-5">
-          <CardContent className="flex flex-col items-center gap-3 pt-6 text-center sm:flex-row sm:justify-between sm:text-left">
-            <div>
-              <p className="text-sm font-semibold text-ink-900">COORTEXXA Sales</p>
-              <p className="text-sm text-ink-500">Próximamente — fuerza de venta en terreno.</p>
-            </div>
-            <StatusBadge tone="info">Próximamente</StatusBadge>
-          </CardContent>
-        </Card>
 
         <Card className="mt-5">
           <CardContent className="flex flex-col items-center gap-3 pt-6 text-center sm:flex-row sm:justify-between sm:text-left">

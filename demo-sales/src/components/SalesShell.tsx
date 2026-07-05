@@ -1,18 +1,19 @@
 import type { ReactNode } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { LayoutDashboard, PlusCircle, TrendingUp, Workflow } from 'lucide-react'
+import { LayoutDashboard, ListChecks, Map, Trophy } from 'lucide-react'
 import { DemoVerticalShell, RoleSwitcher, type DemoNavItem, type SidebarLinkProps } from '@coortexxa/ui-kit'
 import { useRole, type RolDemo } from '@/context/RoleContext'
 
 const navItems: DemoNavItem[] = [
-  { label: 'Dashboard Bank', href: '/', icon: LayoutDashboard },
-  { label: 'Pipeline', href: '/pipeline', icon: Workflow },
-  { label: 'Nueva solicitud', href: '/solicitudes/nueva', icon: PlusCircle },
-  { label: 'Simulador POS', href: '/simulador', icon: TrendingUp },
+  { label: 'Dashboard Sales', href: '/', icon: LayoutDashboard },
+  { label: 'Agenda de visitas', href: '/visitas', icon: ListChecks },
+  { label: 'Pedidos', href: '/pedidos', icon: ListChecks },
+  { label: 'Ranking y bonos', href: '/ranking', icon: Trophy },
+  { label: 'Territorio', href: '/territorio', icon: Map },
 ]
 
 const roleOptions: { value: RolDemo; label: string }[] = [
-  { value: 'EJECUTIVO', label: 'Ejecutivo' },
+  { value: 'VENDEDOR', label: 'Vendedor' },
   { value: 'SUPERVISOR', label: 'Supervisor' },
   { value: 'GERENTE', label: 'Gerente' },
 ]
@@ -24,18 +25,18 @@ const renderRouterLink = ({ href, className, onClick, children }: SidebarLinkPro
 )
 
 const userNameByRol: Record<RolDemo, string> = {
-  EJECUTIVO: 'Camila Rojas (Ejecutivo)',
-  SUPERVISOR: 'Supervisión Zona Centro',
-  GERENTE: 'Gerencia COORTEXXA Bank',
+  VENDEDOR: 'Camila Rojas (Vendedor)',
+  SUPERVISOR: 'Supervisión Ruta Norte',
+  GERENTE: 'Gerencia COORTEXXA Sales',
 }
 
-interface BankShellProps {
+interface SalesShellProps {
   title: string
   description?: string
   children: ReactNode
 }
 
-export function BankShell({ title, description, children }: BankShellProps) {
+export function SalesShell({ title, description, children }: SalesShellProps) {
   const location = useLocation()
   const { rol, setRol } = useRole()
 
