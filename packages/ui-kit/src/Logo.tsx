@@ -1,3 +1,4 @@
+import { useId } from 'react'
 import { cn } from './lib/cn'
 
 export interface LogoProps {
@@ -24,10 +25,13 @@ const wordmarkTextClass: Record<NonNullable<LogoProps['size']>, string> = {
   lg: 'text-xl',
 }
 
+const PETAL = 'M17,14 C23,12 29,14 29,16 C29,18 23,20 17,18 Z'
+
 /**
- * Isotipo COORTEXXA: cruce de dos barras (referencia a la doble "X" del nombre)
- * dentro de un cuadrado redondeado — representa flujos que se cruzan y se
- * conectan dentro de una plataforma modular. Ver docs/brand-guide.md.
+ * Isotipo COORTEXXA "Nexus Inteligente": cuatro brazos redondeados en gradiente
+ * azul→violeta que forman una X — conexión, inteligencia e infraestructura que
+ * se cruza en un punto central. Vectorización propia aproximada de la
+ * referencia visual aprobada (Fase 6.6). Ver docs/brand-guide.md.
  * 100% SVG inline, sin assets externos.
  */
 export function Logo({
@@ -38,8 +42,10 @@ export function Logo({
   className,
   'aria-label': ariaLabel = 'COORTEXXA',
 }: LogoProps) {
+  const gradientId = useId()
   const markPx = markSizePx[size]
-  const wordmarkColor = tone === 'light' ? '#ffffff' : '#10121a'
+  const wordmarkColor = tone === 'light' ? '#ffffff' : '#0b1020'
+  const accentColor = tone === 'light' ? '#a996ff' : '#6d5ce0'
   const renderWordmark = showWordmark ?? variant === 'horizontal'
 
   return (
@@ -53,16 +59,25 @@ export function Logo({
         role="img"
         aria-label={ariaLabel}
       >
-        <rect width="32" height="32" rx="9" fill="#4a3dd1" />
-        <rect x="14.5" y="6.5" width="3" height="19" rx="1.5" fill="#ffffff" transform="rotate(23 16 16)" />
-        <rect x="14.5" y="6.5" width="3" height="19" rx="1.5" fill="#ffffff" transform="rotate(-23 16 16)" />
+        <defs>
+          <linearGradient id={gradientId} x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stopColor="#2f6bff" />
+            <stop offset="1" stopColor="#8b5cf6" />
+          </linearGradient>
+        </defs>
+        <g fill={`url(#${gradientId})`} transform="rotate(45 16 16)">
+          <path d={PETAL} />
+          <path d={PETAL} transform="rotate(90 16 16)" />
+          <path d={PETAL} transform="rotate(180 16 16)" />
+          <path d={PETAL} transform="rotate(270 16 16)" />
+        </g>
       </svg>
       {renderWordmark && (
         <span
-          className={cn('font-semibold tracking-tight', wordmarkTextClass[size])}
+          className={cn('font-bold tracking-tight', wordmarkTextClass[size])}
           style={{ color: wordmarkColor }}
         >
-          COORTEXXA
+          COORTE<span style={{ color: accentColor }}>XXA</span>
         </span>
       )}
     </div>

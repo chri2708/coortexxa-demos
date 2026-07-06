@@ -1,6 +1,15 @@
-<svg width="168" height="32" viewBox="0 0 168 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="COORTEXXA">
-  <rect width="32" height="32" rx="9" fill="#4a3dd1"/>
-  <rect x="14.5" y="6.5" width="3" height="19" rx="1.5" fill="#ffffff" transform="rotate(23 16 16)"/>
-  <rect x="14.5" y="6.5" width="3" height="19" rx="1.5" fill="#ffffff" transform="rotate(-23 16 16)"/>
-  <text x="44" y="21.5" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="17" font-weight="600" letter-spacing="-0.3" fill="#ffffff">COORTEXXA</text>
+<svg width="184" height="32" viewBox="0 0 184 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="COORTEXXA">
+  <defs>
+    <linearGradient id="coortexxaNexusGradientHD" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2F6BFF"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#coortexxaNexusGradientHD)" transform="rotate(45 16 16)">
+    <path d="M17,14 C23,12 29,14 29,16 C29,18 23,20 17,18 Z"/>
+    <path d="M17,14 C23,12 29,14 29,16 C29,18 23,20 17,18 Z" transform="rotate(90 16 16)"/>
+    <path d="M17,14 C23,12 29,14 29,16 C29,18 23,20 17,18 Z" transform="rotate(180 16 16)"/>
+    <path d="M17,14 C23,12 29,14 29,16 C29,18 23,20 17,18 Z" transform="rotate(270 16 16)"/>
+  </g>
+  <text x="44" y="21.5" font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="17" font-weight="700" letter-spacing="-0.3"><tspan fill="#ffffff">COORTE</tspan><tspan fill="#a996ff">XXA</tspan></text>
 </svg>
