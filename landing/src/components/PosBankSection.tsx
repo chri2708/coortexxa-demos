@@ -1,4 +1,4 @@
-import { CreditCard, Store } from 'lucide-react'
+import { CloudOff, CreditCard, Store } from 'lucide-react'
 import { StatusBadge } from '@coortexxa/ui-kit'
 import { money } from '@/lib/format'
 
@@ -35,6 +35,7 @@ export function PosBankSection() {
             <li>· Comparativo de costo actual vs. propuesta, en vivo</li>
             <li>· Simulación de ahorro mensual y anual</li>
             <li>· Formulario, firma y respaldo documental en la misma visita</li>
+            <li>· Funciona sin conexión: la venta se guarda y sincroniza sola al volver la señal</li>
           </ul>
         </div>
 
@@ -49,7 +50,12 @@ export function PosBankSection() {
                 <p className="text-xs text-ink-500">Adquirente actual: Proveedor actual</p>
               </div>
             </div>
-            <StatusBadge tone="info">Visita en curso</StatusBadge>
+            <div className="flex shrink-0 flex-col items-end gap-1">
+              <StatusBadge tone="info">Visita en curso</StatusBadge>
+              <span className="flex items-center gap-1 text-[10px] text-ink-500">
+                <CloudOff className="h-3 w-3" /> Sin señal — guardando localmente
+              </span>
+            </div>
           </div>
 
           <div className="mt-6 flex flex-col gap-2.5">

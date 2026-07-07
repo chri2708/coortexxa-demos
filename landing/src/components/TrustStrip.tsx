@@ -2,7 +2,7 @@ const badges = [
   'Pensado para fuerzas de venta B2B',
   'Multi vertical',
   'Diseño modular',
-  'Preparado para operación en terreno',
+  'Funciona sin conexión en terreno',
   'Dashboards y ranking por rol',
   'Flujos adaptables por industria',
 ]

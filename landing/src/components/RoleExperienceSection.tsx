@@ -3,6 +3,7 @@ import {
   Award,
   BarChart3,
   Building2,
+  CloudOff,
   FileText,
   LayoutDashboard,
   Megaphone,
@@ -95,6 +96,9 @@ function EjecutivoMockup() {
               <StatusBadge tone="success">Aprobada · 1</StatusBadge>
               <StatusBadge tone="danger">Rechazada · 1</StatusBadge>
             </div>
+            <p className="mt-2 flex items-center gap-1 text-[10px] text-ink-300">
+              <CloudOff className="h-3 w-3" /> Guardadas aunque el ejecutivo se quede sin conexión
+            </p>
           </div>
           <div className="rounded-[var(--radius-sm)] border border-border p-3">
             <p className="mb-2 text-xs font-semibold text-ink-900">Simulador de ahorro</p>
@@ -306,7 +310,7 @@ const mockupByRole: Record<RoleKey, () => ReactNode> = {
 
 const descripcionByRole: Record<RoleKey, string> = {
   ejecutivo:
-    'El ejecutivo ve su venta, su simulador, sus documentos, sus estados y su posición en el ranking — todo en una sola pantalla.',
+    'El ejecutivo ve su venta, su simulador, sus documentos, sus estados y su posición en el ranking — todo en una sola pantalla, incluso sin conexión en terreno.',
   dealer:
     'El dealer/supervisor ve a su equipo: quién vende, cuánto falta para la meta y cómo viene el cierre del mes.',
   banco:

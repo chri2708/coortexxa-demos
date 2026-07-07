@@ -1,4 +1,4 @@
-import { Calculator, FileCheck2, MapPin, Send, Trophy, TrendingUp } from 'lucide-react'
+import { Calculator, CloudOff, FileCheck2, MapPin, RefreshCw, Send, Trophy, TrendingUp } from 'lucide-react'
 
 const steps = [
   {
@@ -14,7 +14,8 @@ const steps = [
   {
     icon: FileCheck2,
     title: 'Registra datos y documentos',
-    description: 'Formulario, firma y evidencia quedan adjuntos a la venta desde el primer momento.',
+    description:
+      'Formulario, firma y evidencia quedan adjuntos a la venta desde el primer momento — incluso sin señal.',
   },
   {
     icon: Send,
@@ -64,6 +65,23 @@ export function JourneySection() {
               <p className="mt-1.5 text-sm text-ink-500">{description}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mx-auto mt-8 flex max-w-3xl flex-col items-center gap-4 rounded-[var(--radius-lg)] border border-brand-500 bg-brand-50 p-6 text-center sm:flex-row sm:text-left">
+          <div className="flex shrink-0 items-center gap-1.5">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-brand-600">
+              <CloudOff className="h-5 w-5" />
+            </div>
+            <RefreshCw className="h-4 w-4 text-brand-500" />
+          </div>
+          <div>
+            <p className="font-semibold text-brand-700">Venta en terreno, incluso sin conexión.</p>
+            <p className="mt-1 text-sm text-brand-700/80">
+              Si el ejecutivo queda sin internet, COORTEXXA sigue trabajando: completa el formulario,
+              guarda la venta pendiente y sincroniza automáticamente cuando vuelve la señal. Menos
+              ventas perdidas, menos reproceso, menos dependencia de la cobertura del sector.
+            </p>
+          </div>
         </div>
       </div>
     </section>
