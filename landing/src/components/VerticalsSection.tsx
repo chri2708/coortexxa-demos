@@ -1,5 +1,6 @@
-import { Briefcase, HeartPulse, Landmark, PiggyBank, ShieldPlus, Umbrella } from 'lucide-react'
+import { ArrowUpRight, Briefcase, HeartPulse, Landmark, PiggyBank, ShieldPlus, Umbrella } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle, StatusBadge, type StatusTone } from '@coortexxa/ui-kit'
+import { demoLinks } from '@/config/demoLinks'
 
 interface Vertical {
   icon: typeof Landmark
@@ -7,6 +8,7 @@ interface Vertical {
   description: string
   modules: string[]
   status: 'Demo ready' | 'Next demo' | 'Roadmap'
+  href?: string
 }
 
 const statusTone: Record<Vertical['status'], StatusTone> = {
@@ -22,6 +24,7 @@ const verticals: Vertical[] = [
     description: 'Venta y revisión de productos bancarios en canal presencial y terreno.',
     modules: ['Formularios', 'Firma digital', 'Workflow de aprobación', 'KPI ejecutivo'],
     status: 'Demo ready',
+    href: demoLinks.bank,
   },
   {
     icon: Briefcase,
@@ -29,6 +32,7 @@ const verticals: Vertical[] = [
     description: 'Fuerza de venta en terreno para redes comerciales y distribución.',
     modules: ['Ruta comercial', 'Formularios', 'Ranking de ejecutivos', 'Reportes'],
     status: 'Demo ready',
+    href: demoLinks.sales,
   },
   {
     icon: Umbrella,
@@ -57,6 +61,7 @@ const verticals: Vertical[] = [
     description: 'Afiliaciones, seguros complementarios y convenios médicos para fuerzas comerciales de salud.',
     modules: ['Formularios de afiliación', 'Gestión documental', 'Revisión y aprobación', 'Ranking ejecutivo'],
     status: 'Demo ready',
+    href: demoLinks.health,
   },
 ]
 
@@ -74,7 +79,7 @@ export function VerticalsSection() {
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {verticals.map(({ icon: Icon, name, description, modules, status }) => (
+          {verticals.map(({ icon: Icon, name, description, modules, status, href }) => (
             <Card key={name}>
               <CardHeader className="flex-wrap items-start gap-2">
                 <div className="flex min-w-0 items-center gap-3">
@@ -99,6 +104,16 @@ export function VerticalsSection() {
                     </li>
                   ))}
                 </ul>
+                {href && (
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-600 hover:text-brand-700"
+                  >
+                    Ver demo <ArrowUpRight className="h-3.5 w-3.5" />
+                  </a>
+                )}
               </CardContent>
             </Card>
           ))}

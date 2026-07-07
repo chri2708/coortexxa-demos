@@ -37,9 +37,10 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:block"
+            title="Acceso a la plataforma demo — sin autenticación real"
           >
             <Button variant="secondary" size="sm">
-              Ver Command Center
+              Ingresar a plataforma
             </Button>
           </a>
           <a href="#contacto">

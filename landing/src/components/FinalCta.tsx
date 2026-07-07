@@ -11,7 +11,7 @@ export function FinalCta() {
           Escríbenos y armamos una demo con datos de ejemplo ajustada a tu vertical.
         </p>
         <div className="mt-8 flex justify-center">
-          <a href="mailto:contacto@coortexxa.com">
+          <a href="mailto:chri0909@gmail.com?subject=Solicitud%20de%20demo%20COORTEXXA&body=Hola%2C%20quiero%20solicitar%20una%20demo%20de%20COORTEXXA.%20Mi%20empresa%20es%3A">
             <Button size="lg">Solicitar demo</Button>
           </a>
         </div>

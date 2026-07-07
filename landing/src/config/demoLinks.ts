@@ -1,12 +1,9 @@
 /**
- * URLs de los demos navegables. Hoy apuntan a los dev servers locales
- * (puertos fijos definidos en cada app: command-center=5173, landing=5174,
- * demo-bank=5175, demo-sales=5176, demo-health=5177). Cuando exista un
- * despliegue real, solo se actualiza aquí.
+ * URLs de los demos navegables, ya desplegados en Vercel.
  */
 export const demoLinks = {
-  commandCenter: 'http://localhost:5173',
-  bank: 'http://localhost:5175',
-  sales: 'http://localhost:5176',
-  health: 'http://localhost:5177',
+  commandCenter: 'https://app.coortexxa.com',
+  bank: 'https://bank.coortexxa.com',
+  sales: 'https://sales.coortexxa.com',
+  health: 'https://health.coortexxa.com',
 }

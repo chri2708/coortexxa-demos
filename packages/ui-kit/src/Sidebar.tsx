@@ -8,6 +8,8 @@ export interface SidebarItem {
   icon?: ComponentType<{ className?: string }>
   active?: boolean
   href?: string
+  /** Para apps sin router (una sola pantalla): cambia una sección/vista local en vez de navegar. */
+  onClick?: () => void
 }
 
 export interface SidebarLinkProps {
@@ -68,7 +70,10 @@ export function Sidebar({ items, onNavigate, onClose, renderLink = defaultRender
               {renderLink({
                 href: item.href ?? '#',
                 className,
-                onClick: () => onNavigate?.(),
+                onClick: () => {
+                  item.onClick?.()
+                  onNavigate?.()
+                },
                 children: (
                   <>
                     {Icon && <Icon className="h-4 w-4" />}

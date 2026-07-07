@@ -1,3 +1,4 @@
+import { useState, type ComponentType } from 'react'
 import { ArrowUpRight, BarChart3, Briefcase, Building2, HeartPulse, Landmark, LayoutDashboard, Receipt, Settings, Users } from 'lucide-react'
 import {
   Button,
@@ -25,13 +26,79 @@ const otrosDemos = [
   { icon: HeartPulse, name: 'COORTEXXA Health', href: demoLinks.health },
 ]
 
-const navItems: SidebarItem[] = [
-  { label: 'Command Center', icon: LayoutDashboard, active: true },
-  { label: 'Empresas', icon: Building2 },
-  { label: 'Ejecutivos', icon: Users },
-  { label: 'Ventas', icon: Receipt },
-  { label: 'Reportes', icon: BarChart3 },
-  { label: 'Configuración', icon: Settings },
+type SectionId = 'dashboard' | 'empresas' | 'ejecutivos' | 'ventas' | 'reportes' | 'configuracion'
+
+interface SectionDef {
+  id: SectionId
+  label: string
+  icon: ComponentType<{ className?: string }>
+  description: string
+  metrics: { label: string; value: string }[]
+}
+
+const sections: SectionDef[] = [
+  {
+    id: 'dashboard',
+    label: 'Command Center',
+    icon: LayoutDashboard,
+    description: '',
+    metrics: [],
+  },
+  {
+    id: 'empresas',
+    label: 'Empresas',
+    icon: Building2,
+    description: 'Directorio de empresas clientes, contratos y estado de cuenta por vertical.',
+    metrics: [
+      { label: 'Empresas registradas', value: '12' },
+      { label: 'Contratos activos', value: '9' },
+      { label: 'Renovaciones este mes', value: '2' },
+    ],
+  },
+  {
+    id: 'ejecutivos',
+    label: 'Ejecutivos',
+    icon: Users,
+    description: 'Perfil, metas y desempeño de cada ejecutivo comercial por región.',
+    metrics: [
+      { label: 'Ejecutivos activos', value: '8' },
+      { label: 'Meta cumplida (prom.)', value: '87%' },
+      { label: 'Top performer', value: 'Camila Rojas' },
+    ],
+  },
+  {
+    id: 'ventas',
+    label: 'Ventas',
+    icon: Receipt,
+    description: 'Historial completo de ventas con filtros avanzados y exportación.',
+    metrics: [
+      { label: 'Ventas del mes', value: '$48.550.000' },
+      { label: 'Ticket promedio', value: '$850.000' },
+      { label: 'Conversión', value: '62%' },
+    ],
+  },
+  {
+    id: 'reportes',
+    label: 'Reportes',
+    icon: BarChart3,
+    description: 'Reportes exportables (PDF/Excel) por vertical, periodo y equipo.',
+    metrics: [
+      { label: 'Reportes generados', value: '4' },
+      { label: 'Formatos disponibles', value: 'PDF / Excel' },
+      { label: 'Última exportación', value: 'Hace 2 días' },
+    ],
+  },
+  {
+    id: 'configuracion',
+    label: 'Configuración',
+    icon: Settings,
+    description: 'Marca, roles, permisos e integraciones de la cuenta.',
+    metrics: [
+      { label: 'Roles configurados', value: '3' },
+      { label: 'Integraciones activas', value: '0' },
+      { label: 'Usuarios con acceso', value: '6' },
+    ],
+  },
 ]
 
 const estadoTone = {
@@ -55,7 +122,52 @@ function ejecutivoNombre(id: string) {
 }
 
 function App() {
+  const [activeSection, setActiveSection] = useState<SectionId>('dashboard')
   const maxVentas = Math.max(...kpisMensuales.map((k) => k.ventasTotales))
+
+  const navItems: SidebarItem[] = sections.map((s) => ({
+    label: s.label,
+    icon: s.icon,
+    active: activeSection === s.id,
+    onClick: () => setActiveSection(s.id),
+  }))
+
+  const current = sections.find((s) => s.id === activeSection)!
+
+  if (activeSection !== 'dashboard') {
+    return (
+      <DashboardShell
+        navItems={navItems}
+        topbarTitle={current.label}
+        topbarDescription="Visión ejecutiva consolidada — todas las empresas"
+        userName="Gerencia COORTEXXA"
+      >
+        <Card>
+          <CardHeader className="flex-wrap items-start gap-2">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-[var(--radius-sm)] bg-brand-100 text-brand-600">
+                <current.icon className="h-5 w-5" />
+              </div>
+              <CardTitle>{current.label}</CardTitle>
+            </div>
+            <StatusBadge tone="warning">Módulo en preparación</StatusBadge>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-ink-500">{current.description}</p>
+            <p className="mt-2 text-sm text-ink-500">
+              Vista de demo — los datos abajo son de ejemplo para mostrar cómo se vería esta sección; el módulo
+              real (con datos y persistencia) se habilita en una fase posterior.
+            </p>
+            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+              {current.metrics.map((m) => (
+                <MetricCard key={m.label} label={m.label} value={m.value} delta="Dato de ejemplo" />
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </DashboardShell>
+    )
+  }
 
   return (
     <DashboardShell
