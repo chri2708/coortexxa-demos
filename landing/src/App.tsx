@@ -9,7 +9,7 @@ import { RankingSection } from './components/RankingSection'
 import { MonthCloseSection } from './components/MonthCloseSection'
 import { ProductsSection } from './components/ProductsSection'
 import { VerticalsSection } from './components/VerticalsSection'
-import { CommandCenterPreview } from './components/CommandCenterPreview'
+import { RoleExperienceSection } from './components/RoleExperienceSection'
 import { DemosDisponiblesSection } from './components/DemosDisponiblesSection'
 import { DemosSection } from './components/DemosSection'
 import { SecuritySection } from './components/SecuritySection'
@@ -32,7 +32,7 @@ function App() {
         <MonthCloseSection />
         <ProductsSection />
         <VerticalsSection />
-        <CommandCenterPreview />
+        <RoleExperienceSection />
         <DemosDisponiblesSection />
         <DemosSection />
         <SecuritySection />
