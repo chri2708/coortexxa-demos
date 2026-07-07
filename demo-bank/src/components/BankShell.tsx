@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { LayoutDashboard, PlusCircle, TrendingUp, Workflow } from 'lucide-react'
+import { LayoutDashboard, PlusCircle, Trophy, TrendingUp, Workflow } from 'lucide-react'
 import { DemoVerticalShell, RoleSwitcher, type DemoNavItem, type SidebarLinkProps } from '@coortexxa/ui-kit'
 import { useRole, type RolDemo } from '@/context/RoleContext'
 
@@ -9,6 +9,7 @@ const navItems: DemoNavItem[] = [
   { label: 'Pipeline', href: '/pipeline', icon: Workflow },
   { label: 'Nueva solicitud', href: '/solicitudes/nueva', icon: PlusCircle },
   { label: 'Simulador POS', href: '/simulador', icon: TrendingUp },
+  { label: 'Ranking y cierre', href: '/ranking', icon: Trophy },
 ]
 
 const roleOptions: { value: RolDemo; label: string }[] = [

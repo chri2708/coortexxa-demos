@@ -1,6 +1,11 @@
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
+import { TrustStrip } from './components/TrustStrip'
 import { ProblemSection } from './components/ProblemSection'
+import { JourneySection } from './components/JourneySection'
+import { PosBankSection } from './components/PosBankSection'
+import { RankingSection } from './components/RankingSection'
+import { MonthCloseSection } from './components/MonthCloseSection'
 import { PlatformSection } from './components/PlatformSection'
 import { VerticalsSection } from './components/VerticalsSection'
 import { CommandCenterPreview } from './components/CommandCenterPreview'
@@ -17,7 +22,12 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <TrustStrip />
         <ProblemSection />
+        <JourneySection />
+        <PosBankSection />
+        <RankingSection />
+        <MonthCloseSection />
         <PlatformSection />
         <VerticalsSection />
         <CommandCenterPreview />

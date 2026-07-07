@@ -6,6 +6,7 @@ import { PipelinePage } from '@/pages/PipelinePage'
 import { NuevaSolicitudPage } from '@/pages/NuevaSolicitudPage'
 import { SolicitudDetailPage } from '@/pages/SolicitudDetailPage'
 import { SimuladorPage } from '@/pages/SimuladorPage'
+import { RankingPage } from '@/pages/RankingPage'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/solicitudes/nueva" element={<NuevaSolicitudPage />} />
             <Route path="/solicitudes/:id" element={<SolicitudDetailPage />} />
             <Route path="/simulador" element={<SimuladorPage />} />
+            <Route path="/ranking" element={<RankingPage />} />
           </Routes>
         </BrowserRouter>
       </SolicitudesProvider>
