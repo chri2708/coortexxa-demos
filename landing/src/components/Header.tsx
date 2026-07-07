@@ -4,8 +4,8 @@ import { Button, Logo } from '@coortexxa/ui-kit'
 import { demoLinks } from '@/config/demoLinks'
 
 const navItems = [
-  { label: 'Plataforma', href: '#plataforma' },
-  { label: 'Verticales', href: '#verticales' },
+  { label: 'Productos', href: '#productos' },
+  { label: 'Industrias', href: '#verticales' },
   { label: 'Demos', href: '#demos' },
   { label: 'Seguridad', href: '#seguridad' },
   { label: 'Contacto', href: '#contacto' },

@@ -1,12 +1,13 @@
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
+import { WhatIsSection } from './components/WhatIsSection'
 import { TrustStrip } from './components/TrustStrip'
 import { ProblemSection } from './components/ProblemSection'
 import { JourneySection } from './components/JourneySection'
 import { PosBankSection } from './components/PosBankSection'
 import { RankingSection } from './components/RankingSection'
 import { MonthCloseSection } from './components/MonthCloseSection'
-import { PlatformSection } from './components/PlatformSection'
+import { ProductsSection } from './components/ProductsSection'
 import { VerticalsSection } from './components/VerticalsSection'
 import { CommandCenterPreview } from './components/CommandCenterPreview'
 import { DemosDisponiblesSection } from './components/DemosDisponiblesSection'
@@ -22,13 +23,14 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <WhatIsSection />
         <TrustStrip />
         <ProblemSection />
         <JourneySection />
         <PosBankSection />
         <RankingSection />
         <MonthCloseSection />
-        <PlatformSection />
+        <ProductsSection />
         <VerticalsSection />
         <CommandCenterPreview />
         <DemosDisponiblesSection />
