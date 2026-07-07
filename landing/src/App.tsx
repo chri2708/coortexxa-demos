@@ -10,6 +10,7 @@ import { MonthCloseSection } from './components/MonthCloseSection'
 import { ProductsSection } from './components/ProductsSection'
 import { VerticalsSection } from './components/VerticalsSection'
 import { RoleExperienceSection } from './components/RoleExperienceSection'
+import { EjecutivoSequenceSection } from './components/EjecutivoSequenceSection'
 import { DemosDisponiblesSection } from './components/DemosDisponiblesSection'
 import { DemosSection } from './components/DemosSection'
 import { SecuritySection } from './components/SecuritySection'
@@ -33,6 +34,7 @@ function App() {
         <ProductsSection />
         <VerticalsSection />
         <RoleExperienceSection />
+        <EjecutivoSequenceSection />
         <DemosDisponiblesSection />
         <DemosSection />
         <SecuritySection />
