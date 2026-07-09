@@ -24,11 +24,12 @@ export function RankingSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight text-ink-900 sm:text-4xl">
-            Cada venta mueve la tabla.
+            El ranking se mueve en vivo, todo el mes.
           </h2>
           <p className="mt-4 text-ink-500">
-            COORTEXXA permite que la fuerza comercial vea cómo evoluciona el ranking durante el mes.
-            Cada venta registrada impacta los KPI, la posición del ejecutivo y la competencia interna.
+            No hay que esperar al cierre para saber quién va ganando. Cada venta registrada actualiza
+            al instante los KPI, la posición del ejecutivo y la competencia interna — la tabla es un
+            seguimiento vivo, no una foto de fin de mes.
           </p>
           <p className="mt-2 text-xs text-ink-300">
             Flujo demostrativo con datos simulados — preparado para operación en tiempo real.

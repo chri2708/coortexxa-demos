@@ -9,7 +9,7 @@ interface Step {
 
 const steps: Step[] = [
   {
-    image: '/screenshots/ejecutivo/01-home.png',
+    image: '/screenshots/ejecutivo/01-home-ejecutivo.png',
     title: 'Su cartera, en la palma de la mano',
     description:
       'Al abrir la app, el ejecutivo ve sus solicitudes activas, el monto en cartera y el estado de cada una — sin pedir un reporte a nadie.',
@@ -23,18 +23,46 @@ const steps: Step[] = [
     valor: 'El argumento de venta se demuestra con datos, acelerando el cierre.',
   },
   {
-    image: '/screenshots/ejecutivo/03-formulario.png',
+    image: '/screenshots/ejecutivo/02-formulario-vacio.png',
     title: 'Formulario de venta POS',
     description:
       'Los datos del comercio y del producto se capturan desde el celular, en el momento, sin papel ni doble digitación.',
     valor: 'Menos errores de captura y menos retrabajo para el banco.',
   },
   {
-    image: '/screenshots/ejecutivo/04-documentos-y-firma.png',
-    title: 'Documentos y respaldo, adjuntos a la venta',
+    image: '/screenshots/ejecutivo/03-rut-invalido.png',
+    title: 'Validación automática del RUT',
     description:
-      'La gestión documental y la firma quedan asociadas a la solicitud desde el primer momento de la visita.',
-    valor: 'Trazabilidad completa desde el día uno — nada se pierde entre la visita y la aprobación.',
+      'El RUT del comercio se valida al instante — si el dígito verificador no cuadra, la app lo marca en rojo antes de continuar.',
+    valor: 'Menos errores de datos desde el origen, sin correcciones posteriores.',
+  },
+  {
+    image: '/screenshots/ejecutivo/04-documentos-pendientes.png',
+    title: 'Control de documentos obligatorios',
+    description:
+      'Cada venta lista los respaldos requeridos y marca en amarillo los que aún faltan, para que nada quede sin adjuntar.',
+    valor: 'Ninguna venta avanza sin sus documentos de respaldo.',
+  },
+  {
+    image: '/screenshots/ejecutivo/05-documento-cargado.png',
+    title: 'Respaldo cargado al instante',
+    description:
+      'Al adjuntar un documento, el requisito cambia de amarillo a verde de inmediato — el ejecutivo ve al instante qué ya está completo.',
+    valor: 'Trazabilidad documental desde el momento de la visita.',
+  },
+  {
+    image: '/screenshots/ejecutivo/06-envio-bloqueado.png',
+    title: 'Nada se envía incompleto',
+    description:
+      'Si faltan datos o documentos, la app bloquea el envío y muestra exactamente qué falta corregir antes de enviar.',
+    valor: 'El sistema impide gestiones incompletas y evita el retrabajo del banco.',
+  },
+  {
+    image: '/screenshots/ejecutivo/07-chooser-gmail.png',
+    title: 'Envío y respaldo de la venta',
+    description:
+      'Con la venta completa, el ejecutivo la envía y respalda directamente desde el celular con la información y los adjuntos asociados.',
+    valor: 'Envío directo con respaldo por correo, sin pasos manuales adicionales.',
   },
   {
     image: '/screenshots/ejecutivo/05-estados-de-venta.png',

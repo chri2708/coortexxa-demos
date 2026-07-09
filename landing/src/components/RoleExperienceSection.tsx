@@ -310,11 +310,11 @@ const mockupByRole: Record<RoleKey, () => ReactNode> = {
 
 const descripcionByRole: Record<RoleKey, string> = {
   ejecutivo:
-    'El ejecutivo ve su venta, su simulador, sus documentos, sus estados y su posición en el ranking — todo en una sola pantalla, incluso sin conexión en terreno.',
+    'En el primer nivel, el ejecutivo opera su propia gestión desde el terreno — la misma que acabas de ver en las capturas, ahora en su tablero.',
   dealer:
-    'El dealer/supervisor ve a su equipo: quién vende, cuánto falta para la meta y cómo viene el cierre del mes.',
+    'Un nivel arriba, el dealer/supervisor deja de ver ventas sueltas y ve a su equipo completo: quién vende, cuánto falta para la meta y cómo viene el cierre.',
   banco:
-    'El banco ve la operación completa: ventas en línea, KPI consolidado y quién gana el mes — ejecutivo y dealer.',
+    'En la cúspide, el banco ve la operación consolidada de todos sus dealers y ejecutivos: ventas en línea, KPI agregado y el ranking de punta a punta.',
 }
 
 export function RoleExperienceSection() {

@@ -15,11 +15,12 @@ export function MonthCloseSection() {
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight text-ink-900 sm:text-4xl">
-            Cierre de mes, con reconocimiento visible
+            Y cuando el mes cierra, el resultado es definitivo.
           </h2>
           <p className="mt-4 text-ink-500">
-            COORTEXXA transforma el cierre de mes en un momento visible de reconocimiento comercial:
-            resultados, ranking final y ganador destacado.
+            Al cierre, el seguimiento en vivo se convierte en el resultado final del mes: cumplimiento
+            del equipo consolidado, ranking cerrado y el ganador confirmado — el momento de
+            reconocimiento que ordena todo el período.
           </p>
         </div>
 
